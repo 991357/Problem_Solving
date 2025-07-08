@@ -1,4 +1,7 @@
-class Solution
+/*
+* 프로그래머스 Lv.2 N개의 최소 공배수 구하기
+* */
+class N_LCM_250708
 {
     public int solution(int[] arr)
     {
