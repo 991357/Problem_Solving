@@ -1,7 +1,6 @@
-import javax.swing.*;
 import java.io.*;
 
-public class SugarDelivery_250709
+public class StoneGame_250709
 {
     public static void main(String[] args) throws IOException
     {
