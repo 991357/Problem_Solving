@@ -10,20 +10,10 @@ public class Fact_zeroCount_250713
 
         int T = Integer.parseInt(br.readLine());
 
-        BigInteger facNum = BigInteger.ONE;
-
-        for (int i = 2; i <= T; i++)
-            facNum = facNum.multiply(BigInteger.valueOf(i));
-
         int count = 0;
 
-        for (int i = String.valueOf(facNum).length() - 1; i >= 0; i--)
-        {
-            if(String.valueOf(facNum).charAt(i) != '0')
-                break;
-
-            count++;
-        }
+        for (long i = 5; T / i >= 1; i *= 5)
+            count += T / i;
 
         System.out.println(count);
     }
