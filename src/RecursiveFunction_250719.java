@@ -28,19 +28,17 @@ public class RecursiveFunction_250719
 
     public static void RecursiveFunction(int n)
     {
+        StringBuilder sb1 = new StringBuilder();
         if(n == 0)
         {
-            StringBuilder sb1 = new StringBuilder();
             for (int i = 0; i < count - n; i++)
                 sb1.append("____");
 
             sb.append(sb1 + "\"재귀함수가 뭔가요?\"").append("\n");
             sb.append(sb1 + "\"재귀함수는 자기 자신을 호출하는 함수라네\"").append("\n");
-            sb.append(sb1 + "라고 답변하였지.").append("\n");
         }
         else
         {
-            StringBuilder sb1 = new StringBuilder();
             for (int i = 0; i < count - n; i++)
                 sb1.append("____");
 
@@ -49,8 +47,8 @@ public class RecursiveFunction_250719
                     "마을 사람들은 모두 그 선인에게 수많은 질문을 했고, 모두 지혜롭게 대답해 주었지.\n" + sb1 +
                     "그의 답은 대부분 옳았다고 하네. 그런데 어느 날, 그 선인에게 한 선비가 찾아와서 물었어.\"").append("\n");
             RecursiveFunction(n-1);
-            sb.append(sb1 + "라고 답변하였지.").append("\n");
         }
+        sb.append(sb1 + "라고 답변하였지.").append("\n");
     }
 
 }
