@@ -32,7 +32,6 @@ public class RecursiveFunction_250719
 
         if(n == 0)
         {
-
             sb.append(underline + "\"재귀함수가 뭔가요?\"").append("\n");
             sb.append(underline + "\"재귀함수는 자기 자신을 호출하는 함수라네\"").append("\n");
         }
