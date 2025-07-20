@@ -6,17 +6,29 @@ public class Main
     public static void main(String[] args) throws IOException
     {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st1 = new StringTokenizer(br.readLine());
 
-        int N = Integer.parseInt(st1.nextToken()), k = Integer.parseInt(st1.nextToken());
+        StringBuilder sb = new StringBuilder();
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        List<Integer> scoreList = new ArrayList<>();
-        StringTokenizer st2 = new StringTokenizer(br.readLine());
-        for (int i = 0; i < N; i++)
-            scoreList.add(Integer.parseInt(st2.nextToken()));
+        long a = Integer.parseInt(st.nextToken()), b = Integer.parseInt(st.nextToken());
+        sb.append(lcm(a, b)).append("\n");
 
-       scoreList.sort(Collections.reverseOrder());
+        System.out.println(sb);
+    }
 
-        System.out.println(scoreList.get(k - 1));
+    static long gcd(long a, long b)
+    {
+        while (b != 0)
+        {
+            long temp = a % b;
+            a = b;
+            b = temp;
+        }
+        return a;
+    }
+
+    static long lcm(long a, long b)
+    {
+        return (a * b) / gcd(a, b);
     }
 }
