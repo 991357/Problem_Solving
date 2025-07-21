@@ -3,52 +3,34 @@ import java.util.*;
 
 public class test
 {
-    static int[][] list;
-    static boolean[] check;
-
     public static void main(String[] args) throws IOException
     {
-        list = new int[][]{{1,2},{3,4}};
-        check = new boolean[]{false, false}; //조건 판별 체크
-
-        List<Integer> lottoList = new ArrayList<>();
-        lotto(1, 0, lottoList);
-    }
-
-    static void backTracking(int row, int score)
-    {
-        if (row == 2) //재귀함수 마치는 조건
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        int[][] arr = new int[N][N];
+        for (int i = 0; i < N; i++)
         {
-            System.out.println(score);
-            return;
+            String str = br.readLine();
+
+            for (int j = 0; j < N; j++)
+                arr[i][j] = str.charAt(j) - '0';
         }
 
-        for (int i = 0; i < 2; i++)
+        int maxSum = 0;
+
+        for (int i = 0; i < N; i++)
         {
-            if (check[i] == false)
+            for (int j = 0; j < N; j++)
             {
-                check[i] = true;
-                backTracking(row+1, score + list[row][i]);
-                check[i] = false;
+                int sum = arr[i][j];
+                if (i-1 >= 0)   sum += arr[i-1][j];
+                if (i+1 < N)    sum += arr[i+1][j];
+                if (j-1 >= 0)   sum += arr[i][j-1];
+                if (j+1 < N)    sum += arr[i][j+1];
+
+                maxSum = Math.max(maxSum, sum);
             }
         }
-    }
-
-    static void lotto(int startIndex, int depth, List<Integer> lottoList)
-    {
-        if(depth == 6)
-        {
-            System.out.println(lottoList);
-            return;
-        }
-        else
-        {
-            for (int i = startIndex; i <= 45; i++)
-            {
-                lottoList.add(i);
-                lotto(i + 1, depth+1, lottoList);
-                lottoList.remove(lottoList.size() - 1);
-            }
-        }
+        System.out.println(maxSum);
     }
 }
