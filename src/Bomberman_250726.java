@@ -50,7 +50,7 @@ public class Bomberman_250726
         // 백준 제출할 때 클래스 명 바꾸세요
         // 백준 제출할 때 클래스 명 바꾸세요
     }
-    
+
     /// 폭탄 폭발시키는 함수
     private static void ExplodeBomb(char bombArr[][], int R, int C)
     {
