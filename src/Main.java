@@ -6,35 +6,48 @@ public class Main
     public static void main(String[] args) throws IOException
     {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        StringBuilder sb = new StringBuilder();
 
-        int T = Integer.parseInt(br.readLine());
-        int seminarArr[][] = new int[T][2];
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
 
-        for (int i = 0; i < T; i++)
+        int[] numArr = new int[N];
+        boolean[] visited = new boolean[N];
+        int[] sel = new int[M];
+
+        for(int i = 0; i < N; i++)
+            numArr[i] = i + 1;
+
+        recursive(numArr, sel, visited,0, N, M, sb);
+
+        System.out.println(sb);
+    }
+
+    private static void recursive(int[] numArr, int[] sel, boolean[] visited, int idx, int N, int M, StringBuilder sb)
+    {
+        // bases part
+        if(idx == M)
         {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            seminarArr[i][0] = Integer.parseInt(st.nextToken());
-            seminarArr[i][1] = Integer.parseInt(st.nextToken());
+            for(int i = 0; i < M; i++)
+                sb.append(sel[i]).append(" ");
+            sb.append("\n");
+            return;
         }
 
-        // 종료 시간 기준 정렬 (같으면 시작 시간)
-        Arrays.sort(seminarArr, (o1, o2) -> {
-            if (o1[1] == o2[1]) return o1[0] - o2[0];
-            return o1[1] - o2[1];
-        });
-
-        int count = 0;
-        int lastEnd = 0;
-
-        for (int i = 0; i < T; i++)
+        // inductive part
+        else
         {
-            if (seminarArr[i][0] >= lastEnd)
+            for(int i = 0; i < N; i++)
             {
-                lastEnd = seminarArr[i][1];
-                count++;
+                if(!visited[i])
+                {
+                    sel[idx] = numArr[i];
+                    visited[i] = true;
+                    recursive(numArr, sel, visited,idx + 1,N, M, sb);
+                    visited[i] = false;
+                }
             }
         }
-
-        System.out.println(count);
     }
 }

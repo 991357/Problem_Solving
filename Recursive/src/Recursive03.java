@@ -9,7 +9,7 @@ import java.util.*;
 public class Recursive03
 {
     // 원본
-    static int arr[] = {1,3,5};
+    static int arr[] = {1,2,3,4};
 
     // 몇개?
     static int N = 2;
