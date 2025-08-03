@@ -43,7 +43,7 @@ public class NormalKnapsack_250802
 
     private static void recursive(List<List<Integer>> packList, List<Integer> keyTemp, boolean[] sel, int idx, int K)
     {
-        // bases part
+        // b
         if(idx == keyTemp.size())
         {
             int weightTemp = 0;
@@ -64,7 +64,7 @@ public class NormalKnapsack_250802
             return;
         }
 
-        // inductive part
+        // i
 
         // 선택
         sel[idx] = true;

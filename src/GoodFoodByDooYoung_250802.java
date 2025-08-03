@@ -19,7 +19,7 @@ public class GoodFoodByDooYoung_250802
             StringTokenizer st = new StringTokenizer(br.readLine());
 
             int sour = Integer.parseInt(st.nextToken());
-            int bad = Integer.parseInt(st.nextToken());
+            int bad = Integer.parseInt(st.nextToken()); // 쓴맛... 이 영어로 뭐죠?
 
             tasteArr[i][0] = sour;
             tasteArr[i][1] = bad;
@@ -32,10 +32,11 @@ public class GoodFoodByDooYoung_250802
 
     private static void recursive(int[][] tasteArr, boolean[] sel, int idx)
     {
+        // b
         if (idx == tasteArr.length)
         {
             int sour = 1;
-            int bad = 0; // 쓴맛... 이 영어로 뭐죠?
+            int bad = 0;
 
             for (int i = 0; i < sel.length; i++)
             {
@@ -53,6 +54,7 @@ public class GoodFoodByDooYoung_250802
             return;
         }
 
+        // i
         sel[idx] = true; // 선택
         recursive(tasteArr, sel, idx + 1);
 

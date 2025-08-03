@@ -5,7 +5,6 @@ public class Permutation_250802
 {
     static int check = 0;
     static StringBuilder sb = new StringBuilder();
-    static boolean isStop = false;
 
     public static void main(String[] args) throws IOException
     {
@@ -13,7 +12,7 @@ public class Permutation_250802
 
         String line;
 
-        while ((line = br.readLine()) != null && !line.isEmpty())
+        while ((line = br.readLine()) != null && !line.isEmpty()) // 더 이상 입력이 없을때까지
         {
             StringTokenizer st = new StringTokenizer(line);
 
@@ -29,7 +28,6 @@ public class Permutation_250802
             boolean visited[] = new boolean[arr.length];
 
             // 초기화
-            isStop = false;
             check = 0;
 
             // 재귀를 돌것인가 말것인가
@@ -54,10 +52,7 @@ public class Permutation_250802
 
     private static void recursive(Character arr[], Character[] sel, boolean[] visited, String str, int idx, int checkNum)
     {
-        if(isStop) // 이제 그만~
-            return;
-
-        // bases part
+        // b
         if(idx == arr.length)
         {
             check++;
@@ -70,20 +65,13 @@ public class Permutation_250802
                     sbTemp.append(sel[i]);
 
                 sb.append(str).append(" ").append(checkNum).append(" = ").append(sbTemp).append("\n");
-
-                // 내가 원하는거 찾았으니까 이제 그만~
-                isStop = true;
             }
-
             return;
         }
 
-        // inductive part
+        // i
         for(int i = 0; i < arr.length; i++)
         {
-            if(isStop) // 이제 그만~
-                return;
-
             // 방문 체크
             if(!visited[i])
             {
@@ -95,3 +83,5 @@ public class Permutation_250802
         }
     }
 }
+
+// https://www.acmicpc.net/problem/9742

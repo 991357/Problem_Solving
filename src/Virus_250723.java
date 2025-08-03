@@ -3,52 +3,54 @@ import java.util.*;
 
 public class Virus_250723
 {
-    static ArrayList<Integer>[] graph;
-    static boolean[] visited;
     static int count = 0;
 
     public static void main(String[] args) throws IOException
     {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine()); // 컴퓨터 수
-        int M = Integer.parseInt(br.readLine()); // 연결 수
+        int computerCount = Integer.parseInt(br.readLine());
+        int nodeCount = Integer.parseInt(br.readLine());
 
-        // 그래프 초기화
-        graph = new ArrayList[N + 1];
+        ArrayList<Integer>[] computerList = new ArrayList[computerCount+1];
 
-        for (int i = 1; i <= N; i++)
-            graph[i] = new ArrayList<>();
+        for(int i = 0; i <= computerCount; i++)
+            computerList[i] = new ArrayList<>();
 
-        // 연결 정보 입력
-        for (int i = 0; i < M; i++)
+        for(int i = 0; i < nodeCount; i++)
         {
             StringTokenizer st = new StringTokenizer(br.readLine());
-            int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
-            graph[a].add(b);
-            graph[b].add(a);
+
+            int s = Integer.parseInt(st.nextToken());
+            int e = Integer.parseInt(st.nextToken());
+
+            computerList[s].add(e); // 시작 - 끝
+            computerList[e].add(s); // 끝 - 시작
         }
 
-        // 방문 배열
-        visited = new boolean[N + 1];
+        bfs(computerList, 1);
 
-        // 1번 컴퓨터에서 DFS 시작
-        visited[1] = true; // 1번은 방문했다고 체크
-        dfs(1);
-
-        // 1번 제외한 감염 컴퓨터 수 출력
-        System.out.println(count);
+        System.out.println(count - 1);
     }
 
-    static void dfs(int node)
+    private static void bfs(List<Integer>[] computerList, int idx)
     {
-        for (int next : graph[node])
+        Queue<Integer> virusQ = new LinkedList<>();
+        virusQ.offer(idx);
+        boolean check[] = new boolean[computerList.length];
+        check[idx] = true;
+
+        while (!virusQ.isEmpty())
         {
-            if (!visited[next])
+            int cur = virusQ.poll();
+            count++;
+
+            for(int i = 0; i < computerList[cur].size(); i++)
             {
-                visited[next] = true;
-                count++; // 방문할 때마다 감염 컴퓨터 카운트
-                dfs(next);
+                if(!check[computerList[cur].get(i)])
+                {
+                    check[computerList[cur].get(i)] = true;
+                    virusQ.offer(computerList[cur].get(i));
+                }
             }
         }
     }
