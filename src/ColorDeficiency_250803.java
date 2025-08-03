@@ -124,3 +124,5 @@ public class ColorDeficiency_250803
         }
     }
 }
+
+// https://www.acmicpc.net/problem/10026
