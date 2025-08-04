@@ -1,0 +1,3 @@
+#include <iostream>
+#include <queue>
+using namespace std;int main(){ios_base::sync_with_stdio(false);cin.tie(NULL);queue<int> cardQueue;int N;cin >> N;for (int i = 1; i <= N; i++)	cardQueue.push(i);if (cardQueue.size() > 1){while (true){cardQueue.pop();int temp = cardQueue.front();cardQueue.pop();cardQueue.push(temp);if (cardQueue.size() == 1)break;}cout << cardQueue.front();}else cout << cardQueue.front();return 0;}
