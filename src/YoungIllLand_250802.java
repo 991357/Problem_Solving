@@ -10,6 +10,7 @@ public class YoungIllLand_250802
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
 
+        // 놀이공원
         long[][] landArr = new long[N + 1][N + 1];
         int M = Integer.parseInt(br.readLine());
 
@@ -20,7 +21,7 @@ public class YoungIllLand_250802
             int y = Integer.parseInt(st.nextToken());
             long time = Long.parseLong(st.nextToken());
 
-            landArr[x][y] = Math.max(landArr[x][y], time);
+            landArr[x][y] = Math.max(landArr[x][y], time); // x에서 y까지 갈 수 있는 최대 시간만 저장
         }
 
         for (int i = 1; i <= N; i++)
@@ -28,8 +29,8 @@ public class YoungIllLand_250802
             if (landArr[0][i] != 0)
             {
                 boolean[] visited = new boolean[N + 1];
-                visited[i] = true;
-                recursive(landArr, visited, i, landArr[0][i], 1, N);
+                visited[i] = true; // 여기까지는 간겁니다.
+                recursive(landArr, visited, i, landArr[0][i], 1, N); // 재귀 호출
             }
         }
 
@@ -38,6 +39,7 @@ public class YoungIllLand_250802
 
     private static void recursive(long[][] landArr, boolean[] visited, int current, long total, int count, int N)
     {
+        // b
         if (count == N)
         {
             if (landArr[current][0] != 0)
@@ -46,6 +48,7 @@ public class YoungIllLand_250802
             return;
         }
 
+        // i
         for (int i = 1; i <= N; i++)
         {
             if (!visited[i] && landArr[current][i] != 0)
