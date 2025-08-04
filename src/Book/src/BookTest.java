@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class BookTest
 {
     public static void main(String[] args)

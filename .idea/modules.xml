@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Book/Book.iml" filepath="$PROJECT_DIR$/Book/Book.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Live/Live.iml" filepath="$PROJECT_DIR$/Live/Live.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Movie/Movie.iml" filepath="$PROJECT_DIR$/Movie/Movie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/Book/Book.iml" filepath="$PROJECT_DIR$/src/Book/Book.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/Live/Live.iml" filepath="$PROJECT_DIR$/src/Live/Live.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/Movie/Movie.iml" filepath="$PROJECT_DIR$/src/Movie/Movie.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Problem_Solving.iml" filepath="$PROJECT_DIR$/.idea/Problem_Solving.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Recursive/Recursive.iml" filepath="$PROJECT_DIR$/Recursive/Recursive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/Recursive/Recursive.iml" filepath="$PROJECT_DIR$/src/Recursive/Recursive.iml" />
       <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
     </modules>
   </component>
