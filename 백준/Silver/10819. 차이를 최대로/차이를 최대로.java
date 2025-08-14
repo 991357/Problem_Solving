@@ -1,8 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main
-{
+public class Main {
     static int max = 0;
 
     public static void main(String[] args) throws IOException
@@ -33,11 +32,8 @@ public class Main
         {
             int sum = 0;
 
-            for(int i = 0; i < sel.length; i++) // 수열의 합 계산
+            for(int i = 0; i < sel.length - 1; i++) // 수열의 합 계산
             {
-                if(i == sel.length - 1) // 여기까지~
-                    break;
-
                 sum += Math.abs(sel[i] - sel[i+1]);
             }
 
