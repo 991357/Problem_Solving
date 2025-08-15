@@ -73,9 +73,13 @@ public class Main {
                 }
 
                 roadSum += road;
+
+                if(roadSum > MIN)
+                    return;
             }
 
             MIN = Math.min(MIN, roadSum);
+
             return;
         }
 
