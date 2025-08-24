@@ -8,7 +8,6 @@ public class Main {
 
     static int N, M;
     static List<Integer>[] nodeList;
-    static boolean[] checkArr;
     static int[] inDegreeArr;
     static int[] answerArr;
     static Deque<Integer> bfsQ;
@@ -25,7 +24,6 @@ public class Main {
         inDegreeArr = new int[N + 1];
         answerArr = new int[N + 1];
         Arrays.fill(answerArr, 1);
-        checkArr = new boolean[N + 1];
 
         for (int i = 0; i < M; i++)
         {
@@ -56,13 +54,11 @@ public class Main {
         while (!bfsQ.isEmpty())
         {
             int cur = bfsQ.poll();
-            checkArr[cur] = true;
 
             for (int i = 0; i < nodeList[cur].size(); i++)
             {
-                if(--inDegreeArr[nodeList[cur].get(i)] <= 0 && !checkArr[nodeList[cur].get(i)])
+                if(--inDegreeArr[nodeList[cur].get(i)] == 0)
                 {
-
                     answerArr[nodeList[cur].get(i)] = 1 + answerArr[cur];
                     bfsQ.offer(nodeList[cur].get(i));
                 }
