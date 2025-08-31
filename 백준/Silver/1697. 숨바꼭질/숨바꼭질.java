@@ -34,7 +34,7 @@ public class Main {
 
             if(cur == K)
             {
-                MIN = Math.min(MIN, costArr[cur]);
+                MIN = costArr[cur];
                 return;
             }
 
