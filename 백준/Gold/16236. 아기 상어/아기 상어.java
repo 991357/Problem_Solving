@@ -222,7 +222,9 @@ public class Main
 			if(pos[0] == fishPos[0] && pos[1] == fishPos[1])
 			{
 				//System.out.println("뽑아 ! " +  distArr[pos[0]][pos[1]]);
-				min = Math.min(min, distArr[pos[0]][pos[1]]);
+                min = distArr[pos[0]][pos[1]];
+                  break;
+				//min = Math.min(min, distArr[pos[0]][pos[1]]);
 			}
 				
 			for (int i = 0; i < dx.length; i++) 
