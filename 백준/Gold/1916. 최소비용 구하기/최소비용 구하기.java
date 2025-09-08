@@ -61,6 +61,9 @@ public class Main {
 		{
 			int[] cur = dstQ.poll();
 			
+			if(cur[1] > costArr[cur[0]])
+				continue;
+			
 			if(cur[0] == endIdx)
 				return cur[1];
 
