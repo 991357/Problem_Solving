@@ -47,7 +47,9 @@ public class Main {
     		for (int j = 0; j < N; j++) 
     		{
     			int c = Integer.parseInt(st.nextToken());
-    			edgeList.add(new Edge(i, j, c));
+    			
+    			if(i < j)
+    				edgeList.add(new Edge(i, j, c));
 			}
 		}
     	
