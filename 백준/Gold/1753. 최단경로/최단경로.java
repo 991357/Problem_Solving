@@ -1,8 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main
-{
+public class Main {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
     static StringBuilder sb = new StringBuilder();
@@ -74,6 +73,9 @@ public class Main
 
             int start = cur[0];
             int d = cur[1];
+
+            if(d > costArr[start])
+                continue;
 
             for (int i = 0; i < edgeArr[start].size(); i++)
             {
