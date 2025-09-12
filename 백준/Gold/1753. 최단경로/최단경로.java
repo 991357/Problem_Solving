@@ -1,7 +1,8 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class Main
+{
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
     static StringBuilder sb = new StringBuilder();
@@ -9,7 +10,7 @@ public class Main {
     static int V, E;
     static final int INF = 123456789;
 
-    static class Edge implements Comparable<Edge>
+    static class Edge
     {
         int e, w;
 
@@ -17,12 +18,6 @@ public class Main {
         {
             this.e = e;
             this.w = w;
-        }
-
-        @Override
-        public int compareTo(Edge o)
-        {
-            return Integer.compare(this.w, o.w);
         }
     }
 
