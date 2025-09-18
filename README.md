@@ -6,8 +6,8 @@
 
 ## 🛠 사용 언어 & 환경
 
-- **언어**: Java 17
-- **IDE**: IntelliJ IDEA
+- **언어**: Java 1.8, Java 17
+- **IDE**: eclipse, IntelliJ IDEA
 - **컴파일러 옵션**: `javac -encoding UTF-8`
 
 ---
