@@ -8,16 +8,5 @@
 
 - **언어**: Java 1.8, Java 17
 - **IDE**: eclipse, IntelliJ IDEA
-- **컴파일러 옵션**: `javac -encoding UTF-8`
 
 ---
-
-## 📌 기타
-
-- 백준허브를 통해서 커밋
----
-
-## 🔗 백준 & Solved.ac
-
-- [백준 메인](https://www.acmicpc.net/)
-- [Solved.ac](https://solved.ac/)
