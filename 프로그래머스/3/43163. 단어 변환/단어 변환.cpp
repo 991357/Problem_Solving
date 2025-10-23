@@ -49,6 +49,8 @@ void bfs(string begin, string target, vector<string> &words, int &answer)
 int solution(string begin, string target, vector<string> words)
 {
     int answer = 0;
+    
     bfs(begin, target, words, answer);
+    
     return answer;
 }
