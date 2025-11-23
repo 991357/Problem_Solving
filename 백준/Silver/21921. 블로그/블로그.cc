@@ -21,22 +21,20 @@ int main()
         visitorVec.push_back(n);
     }
 
-    int cnt = 0;
-    int end = 0;
     int sum = 0;
-
     int visitorMax = 0;
     int sameCnt = 0;
 
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < X; i++)
+        sum += visitorVec[i];
+
+    visitorMax = sum;
+    sameCnt = 1;
+
+    for (int i = X; i < N; i++)
     {
-        while (cnt != X)
-        {
-            sum += visitorVec[end];
-            end++;
-            cnt++;
-        }
-        
+        sum = sum - visitorVec[i - X] + visitorVec[i];
+
         if (visitorMax < sum)
         {
             visitorMax = sum;
@@ -44,12 +42,6 @@ int main()
         }
         else if (visitorMax == sum)
             sameCnt++;
-
-        cnt--;
-        sum -= visitorVec[i];
-
-        if (end == N)
-            break;
     }
 
     if (visitorMax == 0)
