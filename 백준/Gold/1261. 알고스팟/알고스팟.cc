@@ -12,7 +12,8 @@ int dy[4] = { 0, 0, -1, 1 };
 
 struct Node
 {
-    int x,y,cost;
+    short x,y;
+    int cost;
 };
 
 struct Cmp 
@@ -36,6 +37,7 @@ int dst(int x, int y, vector<vector<int>> &mapVec)
         dstQ.pop();
 
         if (cur.cost > costVec[cur.x][cur.y]) continue;
+        costVec[cur.x][cur.y] = cur.cost;
         if (cur.x == x - 1 && cur.y == y - 1) 
             return cur.cost;
 
