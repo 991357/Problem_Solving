@@ -26,8 +26,6 @@ public class Main {
     	
     	posList = new ArrayList<>();
     	
-    	int[][] mapArr = new int[Y+1][X+1];
-    	
     	for(int i = 0; i <= N; i++) {
     		st = new StringTokenizer(br.readLine());
     		int dir = Integer.parseInt(st.nextToken());
@@ -62,12 +60,12 @@ public class Main {
     	}
     	
     	for(int i = 0; i < posList.size(); i++)
-    		sum += bfs(posList.get(i), mapArr);
+    		sum += bfs(posList.get(i));
     	
     	System.out.println(sum);
     }
     
-    static int bfs(int[] destination, int[][] mapArr) 
+    static int bfs(int[] destination) 
     {
     	Deque<int[]> bfsQ = new ArrayDeque<>();
     	boolean[][] checkArr = new boolean[Y + 1][X + 1];
