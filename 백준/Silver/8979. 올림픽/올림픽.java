@@ -81,7 +81,7 @@ class Main
                 if(temp == 0)
                     curRank++;
                 else
-                    curRank += temp;
+                    curRank += temp + 1;
 
                 temp = 0;
             }
